@@ -21,10 +21,10 @@
               from the definition in an _rels file
               (where it is http://schemas.openxmlformats.org/package/2006/relationships)  -->
 
-<!-- Uncomment for MathML (1 of 3); this file is part of Microsoft Office, and not provided in docx4j. Change it to output UTF-8  
-    <xsl:include href="OMML2MML.xslt" />
- -->
+<!-- Uncomment for MathML (1 of 3); this file is part of Microsoft Office, and not provided in docx4j. Change it to output UTF-8
 
+ -->
+<xsl:include href="OMML2MML.xslt" />
 <xsl:param name="conversionContext"/> <!-- select="'passed in'"-->	
 
    
@@ -137,8 +137,9 @@
 			<xsl:call-template name="pretty-print-block" />
             
 <!-- Uncomment for MathML (2 of 3)
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=MML_HTMLorMML-full"><xsl:comment/></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=MML_HTMLorMML-full"><xsl:comment/></script>
             -->
+
 		</body>
 	</html>
 </xsl:template>
@@ -661,12 +662,18 @@
   </xsl:template>
 
 <!-- Uncomment for MathML (3 of 3) 
-  <xsl:template match="m:oMathPara" >
-    <math xmlns='http://www.w3.org/1998/Math/MathML'>
-            <xsl:apply-templates/>
-    </math>    
-  </xsl:template>
+
 -->
+	<xsl:template match="m:oMathPara" >
+		<math xmlns='http://www.w3.org/1998/Math/MathML'>
+			<xsl:apply-templates/>
+		</math>
+	</xsl:template>
+	<xsl:template match="m:oMath" >
+		<math xmlns='http://www.w3.org/1998/Math/MathML'>
+			<xsl:apply-templates/>
+		</math>
+	</xsl:template>
   <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <!--  +++++++++++++++++++  alternate content     ++++++++++++++ -->
   <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
